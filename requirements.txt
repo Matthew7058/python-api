@@ -1,3 +1,4 @@
 fastapi==0.100.0
 uvicorn==0.23.0
 gunicorn==21.2.0
+uk-fuel-prices-api==0.0.5
