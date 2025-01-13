@@ -12,6 +12,20 @@ async def get_prices():
     data = await api.get_prices()
 
 
+@app.get("/")
+async def root():
+    """Root endpoint to show API is running"""
+    return {
+        "status": "running",
+        "endpoints": {
+            "get_prices": "/get_prices",
+            "search": "/search?query={query}&limit={limit}",
+            "site": "/site/{site_id}",
+            "stations-within-radius": "/stations-within-radius?lat={lat}&lng={lng}&radius={radius}"
+        }
+    }
+
+
 @app.get("/get_prices")
 async def get_prices():
     data = await api.get_prices()
